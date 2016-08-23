@@ -1,0 +1,150 @@
+<div class="title">Cornell University</div>
+
+<div class="info">
+	
+	<div class="image"><%= image_tag @school.image, :style => "height:400px; width:494px; background-position:center;" %></div>
+
+	<div class="properties">
+		
+		<div class="set">
+			<div class="stuff">Division: <%= @school.division %></div>
+			<div class="stuff" id="right">Distance: <%= @school.proximity %>hrs</div>
+		</div>
+
+		<div class="set">
+			<div class="stuff">Population: <%= @school.population %>K</div>
+			<div class="stuff" id="right">CS Rank: <%= @school.computer_science_rank %></div>
+		</div>
+
+		<div class="set">
+			<div class="stuff">Tuition: <%= @school.tuition %>K</div>
+			<div class="stuff" id="right">ACT Score: <%= @school.act_score %></div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="facts">Facts
+
+
+	<%= form_for @fact do |x| %>
+		<%= x.text_area :description, :placeholder => "New Fact About #{@school.name}", :style => "width:800px; padding-left:10px; font-size:18px; padding-top:10px; margin-top:10px; display:inline-block; height:30px; margin-left:30px; float:left;" %>
+		<%= x.submit "New Fact", :style => "display:inline-block; height:40px; width:100px; margin-top:12px; position:absolute; margin-left:-50px; background-color:blue; color: white; cursor:pointer;" %>
+	<% end %>
+
+	<ul>
+		<% @facts.each do |x| %>
+			<li class="li"><%= x.description %></li>
+			<%= link_to "Delete", "/facts/#{x.id}", :class => "delete", :style => " margin-left:10px; text-decoration:none; margin-left:360px; margin-top:-30px; position:absolute;" %>
+		<% end %>
+	</ul>
+
+</div>
+
+<style type="text/css">
+
+	body{
+		padding-bottom: 30px;
+	}
+	
+	.title{
+		height: 60px;
+		text-align: center;
+		margin-top: 30px;
+		font-size: 40px;
+	}
+
+	.info{
+		height: 400px;
+		width: 1000px;
+		margin: auto;
+		margin-top: 30px;
+	}
+
+	.facts{
+
+		width: 1000px;
+		margin: auto;
+		margin-top: 50px;
+		border: black solid;
+		text-align: center;
+		font-size: 30px;
+		padding-top: 5px;
+	}
+
+	ul{
+		margin-top: 80px;
+		width: 900px;
+		font-size: 22px;
+		margin-left: 30px;
+	}
+
+	li{
+		margin-top: 10px;
+		text-align: left;
+		width: 767px;
+		cursor: pointer;
+	}
+
+	.image{
+		height: 400px;
+		width: 494px;
+		display: inline-block;
+		position: absolute;
+		border: black solid;
+		border-right: none;
+	}
+
+	.properties{
+		height: 400px;
+		width: 494px;
+		border: solid black;
+		display: inline-block;		
+		margin-left: 495px;
+		position: absolute;
+	}
+
+	.set{
+		margin: auto;
+		margin-top: 30px;
+		height: 80px;
+		width: 400px;
+	}
+
+	.stuff{
+		height: 60px;
+		width: 194px;
+		display: inline-block;
+		position: absolute;
+		font-size: 28px;
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	#right{
+		margin-left: 200px;
+	}
+
+	.delete{
+		display: none;
+	}
+
+	.unset{
+		display: unset;
+	}
+
+</style>
+
+<script type="text/javascript">
+	
+	var main = function(){
+		$('.li').click(function(){
+			$('.delete').toggleClass('unset');
+		});
+	}
+
+	$(document).ready(main);
+
+</script>
+

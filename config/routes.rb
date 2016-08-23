@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'schools#index'
+  get '/' => 'schools#index', as: :schools
+  post '/' => 'schools#create'
+  get '/schools/:id' => 'schools#show', as: :facts
+  post '/schools/:id' => 'facts#create'
+  get '/facts/:id' => 'facts#destroy'
+  get '/edit/:id' => 'schools#edit', as: :school 
+  patch '/edit/:id' => 'schools#update'
+  get '/delete/:id' => 'schools#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,11 +2,30 @@
 <html>
 <head>
   <title>Collegeorganizer</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
+
+	<div class="header"><%= link_to 'College Organizer', "/", :style => "text-decoration:none; color:black;" %></div>
+
+	<style type="text/css">
+		html, body{
+			margin: 0;
+			padding: 0;
+		}
+
+		.header{
+			border-style: none none solid none;
+			border-color: #e6e6e6;
+			height: 20px;
+			font-size: 24px;
+			padding-bottom: 15px;
+			padding-top: 5px;
+			padding-left: 20px;
+		}
+	</style>
 
 <%= yield %>
 

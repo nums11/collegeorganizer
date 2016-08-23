@@ -1,0 +1,124 @@
+	<div class="new-school">
+		<h2 class="link" id="two">Back</h2>
+		<%= form_for @school do |x| %>
+			<%= x.text_field :name, :placeholder => "School Name", :style => "width:590px; height:50px; margin-left:100px; margin-top:30px; padding-left:10px; font-size:18px;" %>
+			<%= x.text_field :image, :placeholder => "Image Url", :style => "width:590px; height:50px; margin-left:100px; margin-top:40px; padding-left:10px; font-size:18px;" %>
+			<%= x.number_field :division, :placeholder => "Athletic Division", :style => "display:inline-block; height:50px; margin-left:100px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :proximity, :placeholder => "Distance (hrs)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left: 10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :population, :placeholder => "Population (K)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :computer_science_rank, :placeholder => "CS Rank", :style => "display:inline-block; height:50px; padding-left:10px; margin-left:100px; margin-top:40px; font-size:18px; width:168px;" %>
+			<%= x.number_field :tuition, :placeholder => "Tuition (K)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :act_score, :placeholder => "Avg. ACT Score", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.submit "New School", :style => "margin-top:30px; height:80px; width:240px; background-color:blue; color:white; margin-left:280px; cursor: pointer; font-size:18px;" %>
+		<% end %>
+	</div>
+
+<div class="container">
+
+	<h2 class="link" id="one">New School</h2>
+
+	<% @schools.each do |x| %>
+
+		<div class="school">
+			<%= x.name %>
+			<div class="school-click">
+				<%= link_to 'View', "/schools/#{x.id}", :style => "margin-left:55px; text-decoration:none; float:left; display:inline-block;" %>
+				<%= link_to 'Edit', "/edit/#{x.id}", :style => "margin-left:-10px; text-decoration:none; display:inline-block;" %>
+				<%= link_to 'Delete', "/delete/#{x.id}", :style => "margin-right:55px; text-decoration:none;
+					float:right; display:inline-block;" %>
+			</div>	
+		</div>
+
+	<% end %>
+
+</div>
+
+<style type="text/css">
+	.container{
+		border: solid black;
+		height: 600px;
+		width: 800px;
+		margin: auto;
+		margin-top: 50px;
+	}
+
+	.new-school{
+		position: absolute;
+		border: solid black;
+		height: 600px;
+		width: 800px;
+		background-color: white;
+		margin-left: 397px;
+		margin-top: 50px;
+		display: none;
+	}
+
+	.school-click{
+		height: 25px;
+		width: 700px;
+		position: absolute;
+		padding-top: 10px;	
+		z-index: 1;
+		border: solid #e6e6e6;
+		display: none;
+		margin-left: -2px;
+		border-top: none;
+	}
+
+	.school{
+		border: solid #e6e6e6;
+		height: 40px;
+		width: 700px;
+		margin-left: 48px;
+		margin-top: 40px;
+		font-size: 22px;
+		text-align: center;
+		padding-top: 10px;
+		cursor: pointer;
+	}
+
+	h2{
+		text-align: center;
+		cursor: pointer;
+		color: blue;
+	}
+
+	.unset{
+		display: unset;
+	}
+
+	.none{
+		display: none;
+	}
+
+	.remove-bottom{
+		border-bottom: none;
+	}
+
+	.remove-top{
+		border-top: none;
+	}
+</style>
+
+<script type="text/javascript">
+	
+	var main = function(){
+		$('#one').click(function(){
+			$('.new-school').addClass('unset');
+			$('.container').addClass('none');
+		});
+
+		$('#two').click(function(){
+			$('.new-school').removeClass('unset');
+			$('.container').removeClass('none');
+		});
+
+		$('.school').click(function(){
+			$(this).children('.school-click').slideToggle();
+			$(this).toggleClass('remove-bottom');
+		});
+	}
+
+	$(document).ready(main);
+
+</script>
