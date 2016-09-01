@@ -2,6 +2,22 @@ Rails.application.routes.draw do
   root 'schools#index'
   get '/' => 'schools#index', as: :schools
   post '/' => 'schools#create'
+
+  get '/proximity' => 'schools#proximity_index'
+  post '/proximity' => 'schools#create'
+
+  get '/division' => 'schools#division_index'
+  post '/division' => 'schools#create'
+
+  get '/population' => 'schools#population_index'
+  post '/population' => 'schools#create'
+
+  get '/rank' => 'schools#rank_index'
+  post '/rank' => 'schools#create'
+
+  get '/tuition' => 'schools#tuition_index'
+  post '/tuition' => 'schools#create'
+
   get '/schools/:id' => 'schools#show', as: :facts
   post '/schools/:id' => 'facts#create'
   get '/facts/:id' => 'facts#destroy'

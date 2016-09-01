@@ -25,7 +25,162 @@
 			padding-top: 5px;
 			padding-left: 20px;
 		}
-	</style>
+
+	.container{
+		border: solid black;
+		height: 600px;
+		width: 800px;
+		margin-left: 400px;
+		margin-top: 50px;
+		position: absolute;
+	}
+
+	.new-school{
+		position: absolute;
+		border: solid black;
+		height: 600px;
+		width: 800px;
+		background-color: white;
+		margin-left: 397px;
+		margin-top: 50px;
+		display: none;
+	}
+
+	.choices{
+		border: yellow solid;
+		height: 100px;
+		width: 100px;
+	}
+
+	.school-click{
+		height: 25px;
+		width: 700px;
+		position: absolute;
+		padding-top: 10px;	
+		z-index: 1;
+		border: solid #e6e6e6;
+		display: none;
+		margin-left: -2px;
+		border-top: none;
+	}
+
+	.school{
+		border: solid #e6e6e6;
+		height: 40px;
+		width: 700px;
+		margin-left: 48px;
+		margin-top: 25px;
+		font-size: 22px;
+		text-align: center;
+		padding-top: 10px;
+		cursor: pointer;
+	}
+
+	h2{
+		text-align: center;
+		cursor: pointer;
+		color: blue;
+	}
+
+	.unset{
+		display: unset;
+	}
+
+	.none{
+		display: none;
+	}
+
+	.remove-bottom{
+		border-bottom: none;
+	}
+
+	.remove-top{
+		border-top: none;
+	}
+
+	#one{
+		display: inline-block;
+		margin-left: 340px;
+	}
+
+	.sort{
+		height: 20px;
+		width: 80px;
+		display: inline-block;
+		float: right;
+		margin-top: 20px;
+		font-size: 18px;
+		margin-right: 45px;
+		cursor: pointer;
+	}		
+
+	.tri{
+		height: 5px;
+		width: 5px;
+		position: absolute;
+		margin-left: 60px;
+		margin-top: -18px;
+		font-size: 14px;
+	}
+
+	.options{
+		height: 210px;
+		width: 100px;
+		border: solid black;
+		margin-left: -30px;
+		display: none;
+		background-color: white;
+	}
+
+	#choice-one{
+		margin-top: 10px;
+	}
+
+	.choice{
+		height: 25px;
+		width: 85%;
+		margin: auto;
+		text-align: center;
+		margin-top: 15px;
+		color: blue;
+    	box-shadow: 0px 5px 5px #888888;		
+	}		
+
+	a:visited{
+		color: blue;
+	}
+
+	a:active{
+		color: red;
+	}
+</style>
+
+<script type="text/javascript">
+	var main = function(){
+	$('#one').click(function(){
+		$('.new-school').addClass('unset');
+		$('.container').addClass('none');
+	});
+
+	$('#two').click(function(){
+		$('.new-school').removeClass('unset');
+		$('.container').removeClass('none');
+	});
+
+	$('.school').click(function(){
+		$(this).children('.school-click').slideToggle();
+		$(this).toggleClass('remove-bottom');
+	});
+
+	$('.sort').click(function(){
+		$(this).children('.options').slideToggle();
+		$('#up').toggleClass('none');
+	});
+}
+
+$(document).ready(main);
+
+</script>
 
 <%= yield %>
 

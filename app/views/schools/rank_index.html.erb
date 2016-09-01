@@ -1,4 +1,3 @@
-	
 	<div class="new-school">
 		
 		<h2 class="link" id="two">Back</h2>
@@ -23,17 +22,17 @@
 	<div class="sort">Sort By <div class="tri" id="up">▽</div>
 
 		<div class="options">
-			<div class="choice" id="choice-one"><%= link_to "Proximity", '/proximity' %></div>
-			<div class="choice" id="choice-two"><%= link_to "Division", '/division' %></div>
-			<div class="choice" id="choice-three"><%= link_to "Population", '/population' %></div>
-			<div class="choice" id="choice-four"><%= link_to "CS Rank", '/rank' %></div>
+			<div class="choice" id="choice-one"><%= link_to "None", '/' %></div>
+			<div class="choice" id="choice-two"><%= link_to "Proximity", '/proximity' %></div>
+			<div class="choice" id="choice-three"><%= link_to "Division", '/division' %></div>
+			<div class="choice" id="choice-four"><%= link_to "Population", '/population' %></div>
 			<div class="choice" id="choice-five"><%= link_to "Tuition", '/tuition' %></div>
 		</div>
 
 	</div>
 
 
-	<% @schools.each do |x| %>
+	<% @school_rank.each do |x| %>
 
 		<div class="school">
 			<%= x.name %>

@@ -4,6 +4,32 @@ class SchoolsController < ApplicationController
 		@school = School.new
 	end
 
+	def proximity_index
+		@school_proximity = School.all.order(:proximity)
+		@school = School.new
+	end
+
+	def division_index
+		@school_division = School.all.order(:division)
+		@school = School.new
+	end
+
+	def population_index
+		@school_population = School.all.order(:population)
+		@school = School.new
+	end
+
+	def rank_index
+		@school_rank = School.all.order(:computer_science_rank)
+		@school = School.new
+	end
+
+	def tuition_index
+		@school_tuition = School.all.order(:tuition)
+		@school = School.new
+		
+	end
+
 	def create
 		@school = School.new(school_params)
 		if @school.save
