@@ -29,8 +29,8 @@
 
 
 	<%= form_for @fact do |x| %>
-		<%= x.text_area :description, :placeholder => "New Fact About #{@school.name}", :style => "width:800px; padding-left:10px; font-size:18px; padding-top:10px; margin-top:10px; display:inline-block; height:30px; margin-left:30px; float:left;" %>
-		<%= x.submit "New Fact", :style => "display:inline-block; height:40px; width:100px; margin-top:12px; position:absolute; margin-left:-50px; background-color:blue; color: white; cursor:pointer;" %>
+		<%= x.text_area :description, :class => "input", :placeholder => "New Fact About #{@school.name}", :style => "width:800px; padding-left:10px; font-size:18px; padding-top:10px; margin-top:10px; display:inline-block; height:30px; margin-left:30px; float:left;" %>
+		<%= x.submit "New Fact", :id => "submit", :style => "display:inline-block; height:40px; width:100px; margin-top:12px; position:absolute; margin-left:-50px; color: white; cursor:pointer;" %>
 	<% end %>
 
 	<ul>
@@ -60,10 +60,10 @@
 		width: 1000px;
 		margin: auto;
 		margin-top: 30px;
+		box-shadow: 0px 10px 15px 10px #e6e6e6;		
 	}
 
 	.facts{
-
 		width: 1000px;
 		margin: auto;
 		margin-top: 50px;
@@ -71,6 +71,7 @@
 		text-align: center;
 		font-size: 30px;
 		padding-top: 5px;
+		box-shadow: 0px 10px 15px 10px #e6e6e6;		
 	}
 
 	ul{

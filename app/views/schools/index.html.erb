@@ -3,15 +3,15 @@
 		
 		<h2 class="link" id="two">Back</h2>
 		<%= form_for @school do |x| %>
-			<%= x.text_field :name, :placeholder => "School Name", :style => "width:590px; height:50px; margin-left:100px; margin-top:30px; padding-left:10px; font-size:18px;" %>
-			<%= x.text_field :image, :placeholder => "Image Url", :style => "width:590px; height:50px; margin-left:100px; margin-top:40px; padding-left:10px; font-size:18px;" %>
-			<%= x.number_field :division, :placeholder => "Athletic Division", :style => "display:inline-block; height:50px; margin-left:100px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
-			<%= x.number_field :proximity, :placeholder => "Distance (hrs)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left: 10px; font-size:18px; width:168px;" %>
-			<%= x.number_field :population, :placeholder => "Population (K)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
-			<%= x.number_field :computer_science_rank, :placeholder => "CS Rank", :style => "display:inline-block; height:50px; padding-left:10px; margin-left:100px; margin-top:40px; font-size:18px; width:168px;" %>
-			<%= x.number_field :tuition, :placeholder => "Tuition (K)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
-			<%= x.number_field :act_score, :placeholder => "Avg. ACT Score", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
-			<%= x.submit "New School", :style => "margin-top:30px; height:80px; width:240px; background-color:blue; color:white; margin-left:280px; cursor: pointer; font-size:18px;" %>
+			<%= x.text_field :name, :class => "input", :placeholder => "School Name", :style => "width:590px; height:50px; margin-left:100px; margin-top:30px; padding-left:10px; font-size:18px;" %>
+			<%= x.text_field :image, :class => "input", :placeholder => "Image Url", :style => "width:590px; height:50px; margin-left:100px; margin-top:40px; padding-left:10px; font-size:18px;" %>
+			<%= x.number_field :division, :class => "input", :placeholder => "Athletic Division", :style => "display:inline-block; height:50px; margin-left:100px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :proximity, :class => "input", :placeholder => "Distance (hrs)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left: 10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :population, :class => "input", :placeholder => "Population (K)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :computer_science_rank, :class => "input", :placeholder => "CS Rank", :style => "display:inline-block; height:50px; padding-left:10px; margin-left:100px; margin-top:40px; font-size:18px; width:168px;" %>
+			<%= x.number_field :tuition, :class => "input", :placeholder => "Tuition (K)", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.number_field :act_score, :class => "input", :placeholder => "Avg. ACT Score", :style => "display:inline-block; height:50px; margin-left:25px; margin-top:40px; padding-left:10px; font-size:18px; width:168px;" %>
+			<%= x.submit "New School", :id => "submit", :style => "margin-top:30px; height:80px; width:240px; color:white; margin-left:280px; cursor: pointer; font-size:24px;" %>
 		<% end %>
 	</div>
 
